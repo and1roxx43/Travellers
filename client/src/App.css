@@ -42,31 +42,29 @@ body {
     width: 100%;
 }
 
-.btn-cont {
-    display: flex;
-    width: 100%;
-}
-
 .btn-container {
     width: 400px;
     padding: 10px;
 }
     
-.btn {
+.btn-container {
+    list-style: none;
     font-family: 'Cinzel Decorative', cursive;
     cursor: pointer;
     display: flex;
     justify-content: center;
     font-size: 24px;
     color:#97a3b9;
-    border-radius: 10%;
-    border: none;
-    outline: none;
-    padding: 10px;
-    width: 150px;
-    margin: 20px;
+}
+
+.btn {
+    color: #97a3b9;
+}
+
+.register-btn {
+    margin-left: 30px;
 }
 
 .btn:hover {
-    background-color: #ebb27d
+    color: #ebb27d
 }
