@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel Decorative', cursive;
+    width: 100vw;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background: url("./images/Landing-page.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;   
+    height:100vh;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.landing-title {
+    color: #B6BDCA;
+    font-size: 3.5rem;
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center; 
+    padding: 30px 50px;
+    width: 100%;
+}
+
+.btn-cont {
+    display: flex;
+    width: 100%;
+}
+
+.btn-container {
+    width: 400px;
+    padding: 10px;
+}
+    
+.btn {
+    font-family: 'Cinzel Decorative', cursive;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    color:#97a3b9;
+    border-radius: 10%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 150px;
+    margin: 20px;
+}
+
+.btn:hover {
+    background-color: #ebb27d
+}
