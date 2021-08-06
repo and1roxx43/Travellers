@@ -1,121 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Cinzel Decorative', cursive;
-    width: 100vw;
-}
-
-.header-container {
-    display: flex;
+.page-title {
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.main-container {
-    background: url("./images/Adventure.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;   
-    height:100vh;
-}
-
-.title {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.landing-title {
-    color: #B6BDCA;
-    font-size: 3.5rem;
-    display: flex; 
-    justify-content: flex-start;
-    align-items: center; 
-    padding: 30px 50px;
-    width: 100%;
-}
- 
-.btn-container {
-    list-style: none;
-    font-family: 'Cinzel Decorative', cursive;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-    color:#97a3b9;
-    width: 400px;
-    padding: 10px;
-}
-
-.btn {
-    color: #97a3b9;
-    text-decoration: none;
-}
-
-.register-btn {
-    margin-left: 30px;
-}
-
-.btn:hover {
-    color: #ebb27d
-}
-
-/* Login page */
-
-.login-banner{
-    height: 200px;
-    width: 100%;
-    background: url("./images/Login-banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; 
-}
-
-.login-heading {
-    text-align: center;
-    padding: 30px;
-}
-
-.form-container {
-    border-radius: 10px;
-    box-shadow: 5px 10px #d4d4d4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #77B2DD;
-    width: 60%;
-    /* min-height: 800px; */
-    margin: 50px auto;
-    padding: 50px;
-}
-
-.form-container form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 60%;
-}
-
-.form-container input {
-    border-radius: 10px;
-    border: none;
-    font-size: 2rem;
-    padding: 20px 8px;
-    margin: 20px;
-    text-align: center;
-}
-
-.register {
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    padding: 20px;
-    font-size: 2rem;
-    color: #6a696e;
-}
+    align-items: center; */
+    /* text-align: center; */
+    /* font-size: 1.5rem; */
+    margin: 80px auto;
+  }
+  
+  .form-container {
+    width: 50%;
+    /* margin: 20px auto; */
+  }
+  
+  .row {
+      width: 100%;
+      margin-left: 50px;
+  }
+  .ui.purple.center.aligned.header{
+      width: 400px;
+      margin-top: 80px;
+      transform: rotate(-15deg);
+  }
+  
+  .space {
+      padding:50px;
+  }
+  
+  .ui.container.container {
+      width: 100%;
+      height: 98vh;
+      /* padding: 30px; */
+  }
+  .ui.fluid.card{
+      border-radius: 30px 2px;
+  }
+  
+  /* .ui.teal.button:focus,
+  .ui.teal.buttons .button:focus,
+  .ui.teal.button:hover {
+    background-color: #00b5ad;
+  } */
+  
+  .post-card {
+      opacity: 0.8;
+      margin: 10px;
+      font-size: 20px;
+      text-align: center;
+  }
+  
+  .post-card:hover {
+      opacity: 1;
+      transform: scale(1.1);
+      background-color: #fff;
+  } 
+  
+  .btn-submit {
+      width: 100%;
+      margin: auto;
+  }
+  
+  .footer {
+       position: absolute;
+      bottom: 0;
+      width: 100vw;
+      margin: auto;
+  }

@@ -1,0 +1,12 @@
+Body {
+    background: url("../images/bak.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
