@@ -45,6 +45,7 @@ function Register(props) {
           type="text"
           placeholder="Username..."
           name="username"
+          size="big"
           value={values.username}
           error={!!errors.username}
           onChange={onChange}
@@ -53,6 +54,7 @@ function Register(props) {
           type="email"
           placeholder="Email..."
           name="email"
+          size="big"
           value={values.email}
           error={!!errors.email}
           onChange={onChange}
@@ -61,6 +63,7 @@ function Register(props) {
           type="password"
           placeholder="Password..."
           name="password"
+          size="big"
           value={values.password}
           error={!!errors.password}
           onChange={onChange}
@@ -69,11 +72,12 @@ function Register(props) {
           type="password"
           placeholder="Confirm Password..."
           name="confirmPassword"
+          size="big"
           value={values.confirmPassword}
           error={!!errors.confirmPassword}
           onChange={onChange}
         />
-        <Button style={{width: "100%"}} type="submit" color="purple">
+        <Button style={{width: "100%"}} type="submit" color="purple" size="big">
           Register
         </Button>
       </Form>

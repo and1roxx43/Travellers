@@ -42,6 +42,7 @@ function Login(props) {
           type="text"
           placeholder="Username..."
           name="username"
+          size="big"
           value={values.username}
           error={!!errors.username}
           onChange={onChange}
@@ -50,11 +51,12 @@ function Login(props) {
           type="password"
           placeholder="Password..."
           name="password"
+          size="big"
           value={values.password}
           error={!!errors.password}
           onChange={onChange}
         />
-        <Button style={{width: "100%"}} type="submit" color="purple">
+        <Button style={{width: "100%"}} type="submit" color="purple" size="big">
           Login
         </Button>
       </Form>
