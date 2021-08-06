@@ -1,8 +1,8 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server");
 const mongoose = require("mongoose");
-const { MONGODB } = require("./config/connection");
-const { PORT } = require("./config/connection");
+const { MONGODB } = require("./config");
+const { PORT } = require("./config");
 
 const app = express();
 
@@ -30,4 +30,5 @@ mongoose.connect(MONGODB, {
     return server.listen(`${PORT}`)
 }).then((res) => {
     console.log(`Server running at ${res.url}`);
+    console.log(`GraphQL server lidstening on http://localhost:${PORT}${server.graphqlPath}`);
 });
