@@ -1,18 +1,30 @@
 import React from "react";
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@apollo/client";
+import { setContext } from "apollo-link-context";
+
 import App from "./App";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
- 
+
 const httpLink = createHttpLink({
     uri: "http://localhost:5000"
-})
+});
+
+// Sort of a middleware to add authorization headers to API calls
+const authLink = setContext(() => {
+    const token = localStorage.getItem("jwtToken");
+    return {
+        headers: {
+            Authorization: token ? `Bearer ${token}` : ""
+        }
+    };
+});
 
 const client = new ApolloClient({
-    link: httpLink,
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache()
-})
+});
 
 export default (
     <ApolloProvider client={client}>
         <App />
     </ApolloProvider>
-)
+);

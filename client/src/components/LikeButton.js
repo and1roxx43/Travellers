@@ -1,67 +1,72 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-// import { Button, Label, Icon } from "semantic-ui-react";
-import { gql, useMutation } from "@apollo/client";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import gql from 'graphql-tag';
+import { Button, Icon, Label } from 'semantic-ui-react';
+import Tooltip from '../util/Tooltip';
 
-import MyPopup from "../util/MyPopup";
+// eslint-disable-next-line react/prop-types
+function LikeButton({ user, post: { id, likeCount, likes } }) {
+  const [liked, setLiked] = useState(false);
 
-function LikeButton({ user, post: { id, likes, likeCount } }) {
-    const [liked, setLiked] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    if (user && likes.find((like) => like.username === user.username)) {
+      setLiked(true);
+    } else {
+      setLiked(false);
+    }
+  }, [user, likes]);
 
-    useEffect(() => {
-        if (user && likes.find((like) => like.username === user.username)) {
-            setLiked(true);
-        } else setLiked(false);
-    }, [user, likes]);
+  // eslint-disable-next-line no-use-before-define
+  const [likePost] = useMutation(LIKE_POST_MUTATION, {
+    variables: { postId: id },
+  });
 
-    const [likePost] = useMutation(LIKE_POST_MUTATION, {
-        variables: { postId: id }
-    });
-
-    const likeButton = user ? (
-        liked ? (
-            <Button color="blue">
-                <Icon name="heart" />
-            </Button>
-        ) : (
-            <Button basic color="blue">
-                <Icon name="heart" />
-            </Button>
-        )
+  // eslint-disable-next-line no-nested-ternary
+  const likeButton = user ? (
+    liked ? (
+      <Button color="teal">
+        <Icon name="heart" />
+      </Button>
     ) : (
-        <Button as={Link} to={"/login"} basic color="blue">
-            <Icon name="heart" />
-        </Button>
-    );
-
-    return user ? (
-        <Button as="div" labelPosition="right" onClick={likePost}>
-            <MyPopup content={liked ? "Unlike" : "Like"}>{likeButton}</MyPopup>
-            <Label basic color="blue" pointing="left">
-                {likeCount}
-            </Label>
-        </Button>
-    ) : (
-        <Button as="div" labelPosition="right">
-            <MyPopup content={liked ? "Unlike" : "Like"}>{likeButton}</MyPopup>
-            <Label basic color="blue" pointing="left">
-                {likeCount}
-            </Label>
-        </Button>
-    );
+      <Button color="teal" basic>
+        <Icon name="heart" />
+      </Button>
+    )
+  ) : (
+    <Button as={Link} to={"/login"} color="teal" basic>
+      <Icon name="heart" />
+    </Button>
+  );
+  return user ? (
+    <Button as="div" labelPosition="right" onClick={likePost}>
+      <Tooltip content={liked ? 'Unlike' : 'Like'}>{likeButton}</Tooltip>
+      <Label basic color="teal" pointing="left">
+        {likeCount}
+      </Label>
+    </Button>
+  ) : (
+    <Button as="div" labelPosition="right">
+    <Tooltip content={liked ? "Unlike" : "Like"}>{likeButton}</Tooltip>
+    <Label basic color="blue" pointing="left">
+        {likeCount}
+    </Label>
+</Button>
+  )
 }
 
 const LIKE_POST_MUTATION = gql`
-    mutation likePost($postId: ID!) {
-        likePost(postId: $postId) {
-            id
-            likes {
-                id
-                username
-            }
-            likeCount
-        }
+  mutation likePost($postId: ID!) {
+    likePost(postId: $postId) {
+      id
+      likes {
+        id
+        username
+      }
+      likeCount
     }
+  }
 `;
 
 export default LikeButton;

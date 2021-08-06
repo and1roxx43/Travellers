@@ -2,82 +2,71 @@ import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 import { Button, Icon, Confirm } from "semantic-ui-react";
 
-import { FETCH_POSTS_QUERY } from "../util/graphql";
-import MyPopup from "../util/MyPopup";
+import Tooltip from '../util/Tooltip';
+
+import { FETCH_POSTS_QUERY } from '../util/graphql';
 
 function DeleteButton({ postId, commentId, callback }) {
     const [confirmOpen, setConfirmOpen] = useState(false);
-
+  
     const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
-
+  
     const [deletePostOrComment] = useMutation(mutation, {
-        update(proxy) {
-            setConfirmOpen(false);
-
-            if (!commentId) {
-                const data = proxy.readQuery({
-                    query: FETCH_POSTS_QUERY
-                });
-                proxy.writeQuery({
-                    query: FETCH_POSTS_QUERY,
-                    data: {
-                        getPosts: data.getPosts.filter((p) => p.id !== postId)
-                    }
-                });
-            }
-
-            if (callback) callback();
-        },
-        variables: {
-            postId,
-            commentId
+      update(proxy, result) {
+        setConfirmOpen(false);
+  
+        if (!commentId) {
+          // removing the post from the client-side cache
+          const data = proxy.readQuery({
+            query: FETCH_POSTS_QUERY,
+          });
+          // render all the posts minus the one we just deleted
+          const posts = [result.data, ...data.getPosts];
+          proxy.writeQuery({ query: FETCH_POSTS_QUERY, data: { getPosts: posts } });
         }
+  
+        // if it is passed, call the callback (i.e. defined in SinglePost to redirect the user to the homepage)
+        if (callback) callback();
+      },
+      variables: {
+        postId,
+        commentId,
+      },
+      onError(err) {
+        return err;
+      },
     });
-
     return (
         <>
-            <MyPopup content={commentId ? "Delete Comment" : "Delete Post"}>
-                <Button
-                    className="ui icon button"
-                    floated="right"
-                    color="orange"
-                    onClick={() => setConfirmOpen(true)}
-                >
-                    <Icon
-                        name="trash alternate outline"
-                        style={{ margin: 0 }}
-                    ></Icon>
-                </Button>
-            </MyPopup>
-
-            <Confirm
-                open={confirmOpen}
-                onCancel={() => setConfirmOpen(false)}
-                onConfirm={deletePostOrComment}
-            />
+          <Tooltip content={commentId ? 'Delete this comment' : 'Delete this post'}>
+            <Button as="div" color="red" floated="right" onClick={() => setConfirmOpen(true)}>
+              <Icon name="trash" style={{ margin: 0 }} />
+            </Button>
+          </Tooltip>
+          <Confirm open={confirmOpen} onCancel={() => setConfirmOpen(false)} onConfirm={deletePostOrComment} />
         </>
-    );
-}
-
-const DELETE_POST_MUTATION = gql`
-    mutation deletePost($postId: ID!) {
-        deletePost(postId: $postId)
+      );
     }
+
+    const DELETE_POST_MUTATION = gql`
+  mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId)
+  }
 `;
 
 const DELETE_COMMENT_MUTATION = gql`
-    mutation deleteComment($postId: ID!, $commentId: ID!) {
-        deleteComment(postId: $postId, commentId: $commentId) {
-            id
-            comments {
-                id
-                username
-                createdAt
-                body
-            }
-            commentCount
-        }
+  mutation deleteComment($postId: ID!, $commentId: ID!) {
+    deleteComment(postId: $postId, commentId: $commentId) {
+      id
+      comments {
+        id
+        username
+        createdAt
+        body
+      }
+      commentCount
     }
+  }
 `;
 
 export default DeleteButton;
