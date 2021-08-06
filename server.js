@@ -1,6 +1,5 @@
 const express = require("express");
-const { ApolloServer } = require("apollo-server");
-const { PubSub } = require("graphql-subscriptions");
+const { ApolloServer, PubSub} = require("apollo-server");
 const mongoose = require("mongoose");
 const { MONGODB } = require("./config");
 const { PORT } = require("./config");

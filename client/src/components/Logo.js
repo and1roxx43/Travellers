@@ -5,6 +5,7 @@ export default function Logo() {
 
     return (
 
-        <h1>R U OK</h1>
+        <div className="ui small image">
+        </div>
     )
 }

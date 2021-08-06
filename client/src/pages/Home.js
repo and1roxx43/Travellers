@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useQuery } from '@apollo/client';
-import { Grid, Transition, Header, Image } from 'semantic-ui-react';
+import { Grid, Transition} from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
 
@@ -14,14 +14,10 @@ function Home() {
   const { user } = useContext(AuthContext);
 
   return (
-    <Grid columns={5}>
-        <Header style={{fontFamily: "cursive"}} as='h2' color='purple' textAlign='center'>
-        WHAT'S ON YOUR MIND!!!
-        </Header>
+    <Grid columns={3}>
+        {/* <div className="ui small image">
+        </div> */}
       <Grid.Row className="page-title" style={{width:"100%"}}>
-         
-         {/* logo to go here */}
-          <Image></Image>
       </Grid.Row>
       <Grid.Row>
         {user && (
@@ -35,7 +31,7 @@ function Home() {
           <Transition.Group>
             {data.getPosts &&
               data.getPosts.map((post) => (
-                <Grid.Column key={post.id} style={{margin: "2px"}}>
+                <Grid.Column key={post.id} style={{marginBottom: 40 }}>
                   <PostCard post={post} />
                 </Grid.Column>
               ))}

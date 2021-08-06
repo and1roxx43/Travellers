@@ -14,12 +14,14 @@ import Register from './pages/Register';
 import SinglePost from './pages/SinglePost';
 
 import Footer from "./components/Footer"
+import Logo from "./components/Logo";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Container className="container">
+            <Logo />
           <MenuBar />
           <Route exact path="/" component={Home} />
           <AuthRoute exact path="/login" component={Login} />
