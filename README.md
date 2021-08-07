@@ -27,9 +27,10 @@ weCare is a mock up Social Media Community chat where people can communite about
 ## Screenshots
 
 <img width="1526" alt="landing-page" src="https://user-images.githubusercontent.com/14179472/128597059-a89c5e24-996b-4e4c-b0c1-c3bf9fb2d4d7.png">
-![Login](https://user-images.githubusercontent.com/14179472/128597138-8256f5dc-b03c-4a60-a5e0-cd26c746c885.png)
-![Post](https://user-images.githubusercontent.com/14179472/128597174-1f68a9b8-13a3-4d78-943b-6554f25eb94b.png)
-![Landing-page-post](https://user-images.githubusercontent.com/14179472/128597213-5a7efbf5-67a5-4d4a-938e-1e5d4abc5a26.png)
+<img width="1526" alt="login-page" src="https://user-images.githubusercontent.com/14179472/128598690-d5378915-b4f3-432d-81cb-6ccb52b8eb2e.png">
+<img width="1526" alt="Create-post" src="https://user-images.githubusercontent.com/14179472/128598737-093b6f77-5485-412c-869d-a8d681dbd59a.png">
+<img width="1526" alt="Post" src="https://user-images.githubusercontent.com/14179472/128598777-02f32d64-4f49-4303-a07c-8e826d799193.png">
+                                         
 ___
 
 ## Tech Used
