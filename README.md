@@ -17,6 +17,8 @@ ___
 - [Features](#Features)
 - [License](#license)
 - [Usage](#Usage)
+- [Screens](#Screens)
+- [URL](#URL)
 - [Contact](#contact)
 
 ## Description
@@ -71,7 +73,16 @@ To start both server and client concurrently, run the following
 npm run dev
 ```
 
+## Screens
 
+Website is responsive for the following screen size:
+- ipad Pro 
+- ipad
+- iPhoneX
+___
+
+## URL:
+- 
 
 ## Contact
 
