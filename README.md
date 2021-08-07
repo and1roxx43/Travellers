@@ -24,6 +24,12 @@ weCare is a mock up Social Media Community chat where people can communite about
 
 ## Screenshots
 
+<img width="1526" alt="landing-page" src="https://user-images.githubusercontent.com/14179472/128597059-a89c5e24-996b-4e4c-b0c1-c3bf9fb2d4d7.png">
+![Login](https://user-images.githubusercontent.com/14179472/128597138-8256f5dc-b03c-4a60-a5e0-cd26c746c885.png)
+![Post](https://user-images.githubusercontent.com/14179472/128597174-1f68a9b8-13a3-4d78-943b-6554f25eb94b.png)
+![Landing-page-post](https://user-images.githubusercontent.com/14179472/128597213-5a7efbf5-67a5-4d4a-938e-1e5d4abc5a26.png)
+___
+
 ## Tech Used
 - MongoDB
 - Express
