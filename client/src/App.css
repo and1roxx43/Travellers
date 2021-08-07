@@ -1,3 +1,12 @@
+Body {
+    background: url("./images/bak.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+
 .page-title {
     margin: 80px auto;
   }
@@ -10,6 +19,10 @@
     background-repeat: no-repeat;
     background-position: center center;
     margin-top: 20px;
+}
+
+.ui.secondary.pointing.menu .item {
+    color: #fff;
 }
   
   .form-container {
@@ -51,10 +64,119 @@
       width: 100%;
       margin: auto;
   }
-  
+
+  /* --- FOOTER _____  */
   .footer {
-       position: absolute;
+      position: absolute;
       bottom: 0;
       width: 100vw;
       margin: auto;
   }
+
+
+  /* --- Media Screen --- */
+
+
+  @media screen and (max-width:786px){
+    @media screen and (max-width: 897px){
+        .ui.grid>.row{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            flex-grow: 2;
+        }
+
+        .ui[class*="three column"].grid>.column:not(.row), .ui[class*="three column"].grid>.row>.column {
+            margin: auto;
+            width: 80%;
+        }
+    }  
+  }
+
+  @media screen and (max-width:768px){
+    @media screen and (max-width:1024px){
+
+        Body {
+            background: url("./images/bak.jpg");
+            background-repeat: no-repeat;
+            background-size: inherit;
+            background-position: center;
+        }
+
+        .ui.container.container {
+            width: 100%;
+            height: 105vh;
+        }
+
+        .ui.grid>.row{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            flex-grow: 2;
+        }
+
+        .ui[class*="three column"].grid>.column:not(.row), .ui[class*="three column"].grid>.row>.column {
+            margin: auto;
+            width: 80%;
+        }
+
+        .ui.teal.massive.pointing.secondary.right.floated.menu {
+            display: flex;
+            /* flex-direction: column; */
+        }
+    }  
+  }
+
+
+  @media screen and (max-width:812px) {
+    
+    Body {
+        background: url("./images/bak.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100vw 150vh; 
+        background-position: center center;  
+    }
+
+    div > p {
+        visibility: hidden;
+    }
+}
+
+  @media screen and (max-width:375px){
+    @media screen and (max-width: 812px){
+
+        .row{
+            width: 80%;
+            padding: 0;
+            margin: 10px auto;
+        }
+        /* div.column.fade.visible.transition {
+            width: 350px;
+        } */
+
+        .ui.fluid.card.post-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;  
+        }
+
+        .ui.container.container {
+            width: 100%;
+            height: 129vh;
+        }
+
+        .form-container {
+            width: 80%;
+            margin: 20px auto;
+          }
+
+        .ui.purple.center.aligned.header {
+            margin: auto;
+        }
+    }  
+  } 
+
+
+  

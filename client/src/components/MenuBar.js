@@ -22,11 +22,10 @@ function MenuBar() {
     </Menu>
   ) : (
     <Menu pointing secondary floated="right"  size="massive" color="teal">
-      <Menu.Item style={{color: "white", fontSize: "1.5rem"}} name="home" active={activeItem === 'home'} onClick={handleItemClick} as={Link} to="/" />
+      <Menu.Item className="" name="home" active={activeItem === 'home'} onClick={handleItemClick} as={Link} to="/" />
       <Menu.Menu position="right">
-        <Menu.Item style={{color: "white", fontSize: "1.5rem"}} name="login" active={activeItem === 'login'} onClick={handleItemClick} as={Link} to="/login" />
-        <Menu.Item
-          style={{color: "white", fontSize: "1.5rem"}}  
+        <Menu.Item name="login" active={activeItem === 'login'} onClick={handleItemClick} as={Link} to="/login" />
+        <Menu.Item 
           name="register"
           active={activeItem === 'register'}
           onClick={handleItemClick}

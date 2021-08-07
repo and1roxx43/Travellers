@@ -15,8 +15,6 @@ function Home() {
 
   return (
     <Grid columns={3}>
-        {/* <div className="ui small image">
-        </div> */}
       <Grid.Row className="page-title" style={{width:"100%"}}>
       </Grid.Row>
       <Grid.Row>
