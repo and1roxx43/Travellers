@@ -81,7 +81,11 @@ Website is responsive for the following screen size:
 - iPhoneX
 ___
 
-## URL:
+## URL:-
+### GitHub
+- https://github.com/and1roxx43/weCare
+
+## Heroku
 - 
 
 ## Contact
