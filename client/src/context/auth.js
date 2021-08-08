@@ -20,8 +20,6 @@ const AuthContext = createContext({
   logout: () => {},
 });
 
-// TODO: Learn more about reducers
-// A reducer basically receives an action with a type and a payload, then determines what to do based on the functionality
 function authReducer(state, action) {
   switch (action.type) {
     case 'LOGIN':

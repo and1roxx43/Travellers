@@ -1,7 +1,5 @@
-/* eslint-disable no-use-before-define */
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
-// import gql from 'graphql-tag';
 import { gql, useMutation } from '@apollo/client';
 
 import { useForm } from '../util/hooks';
