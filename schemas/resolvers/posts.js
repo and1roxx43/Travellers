@@ -26,11 +26,6 @@ module.exports = { Query: {
     Mutation: {
         async createPost(_, { body }, context) {
           const user = checkAuth(context);
-
-        //   const { valid, errors } = validateCreatePost(body);
-        //     if (!valid) {
-        //         throw new UserInputError("Errors", { errors });
-        //     }
     
           if (body.trim() === '') {
             throw new Error('Post body must not be empty');
