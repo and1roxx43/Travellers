@@ -43,7 +43,7 @@ mongoose.connect(process.env.MONGODB || "mongodb://localhost/myFirstDatabase", {
 }).then(() => {
     return app.listen(`${PORT}`)
 }).then((res) => {
-    console.log(`Server running at ${res.url}`);
+    console.log(`Server running at ${PORT}`);
     console.log(`GraphQL server lidstening on http://localhost:${PORT}${server.graphqlPath}`);
 })
 .catch(err => {
