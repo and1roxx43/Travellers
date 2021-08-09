@@ -30,7 +30,7 @@ app.get("*", (req, res) => {
 })
 
 
-mongoose.connect(MONGODB || "mongodb://localhost/myFirstDatabase", { 
+mongoose.connect(process.env.MONGODB || "mongodb://localhost/myFirstDatabase", { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
