@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const { UserInputError } = require('apollo-server');
 const { validateRegisterInput, validateLoginInput } = require('../../util/validators');
 const { TOKEN_KEY } = require('../../config');
-const User = require('../../models/User');
+const User = require('../../models/user');
 
 
 module.exports = { Mutation: {
