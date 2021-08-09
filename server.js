@@ -1,5 +1,6 @@
 const express = require("express");
-const { ApolloServer, PubSub} = require("apollo-server");
+const { ApolloServer } = require("apollo-server-express");
+const { PubSub } = require("apollo-server");
 const mongoose = require("mongoose");
 // const { MONGODB } = require("./config");
 // const { PORT } = require("./config");
@@ -20,13 +21,12 @@ const server = new ApolloServer({
     context: ({ req }) => ({ req, pubsub })
 });
 
-
+server.applyMiddleware({ app })
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 })
 
 
@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGODB || "mongodb://localhost/myFirstDatabase", {
     useFindAndModify: false,
 
 }).then(() => {
-    return server.listen(`${PORT}`)
+    return app.listen(`${PORT}`)
 }).then((res) => {
     console.log(`Server running at ${res.url}`);
     console.log(`GraphQL server lidstening on http://localhost:${PORT}${server.graphqlPath}`);

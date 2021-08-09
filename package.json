@@ -21,7 +21,7 @@
   "homepage": "https://github.com/and1roxx43/Travellers#readme",
   "dependencies": {
     "apollo-server": "^2.18.2",
-    "apollo-server-express": "^3.0.2",
+    "apollo-server-express": "^2.12.0",
     "bcrypt": "^5.0.1",
     "concurrently": "^6.2.0",
     "dotenv": "^10.0.0",
