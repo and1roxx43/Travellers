@@ -36,7 +36,7 @@ function PostForm() {
   return (
     <>
       <Form onSubmit={onSubmit}>
-        <h2 style={{color: "#EBEAE2", fontFamily: "cursive", textAlign: "center"}}>Tell us how you feel today</h2>
+        <h2 style={{color: "#EBEAE2", fontFamily: "cursive", textAlign: "center"}}>what is on your mind</h2>
         <Form.Field>
           <Form.Input name="body" onChange={onChange} value={values.body} error={!!error} />
           <Button className="btn-submit" type="submit" color="purple">
