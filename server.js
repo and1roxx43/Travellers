@@ -1,7 +1,7 @@
 const express = require("express");
 const { ApolloServer, PubSub} = require("apollo-server");
 const mongoose = require("mongoose");
-const { MONGODB } = require("./config");
+// const { MONGODB } = require("./config");
 // const { PORT } = require("./config");
 const path = require("path");
 
@@ -30,7 +30,7 @@ app.get("*", (req, res) => {
 })
 
 
-mongoose.connect(MONGODB, { 
+mongoose.connect(MONGODB || "mongodb://localhost/myFirstDatabase", { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
