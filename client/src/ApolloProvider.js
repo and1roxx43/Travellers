@@ -4,7 +4,7 @@ import { setContext } from 'apollo-link-context';
 import App from './App';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:8008/graphql',
+  uri: 'https://arcane-woodland-65594.herokuapp.com/',
 });
 
 // kind of a middleware to add authorization headers to API calls
