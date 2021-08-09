@@ -5,11 +5,12 @@ import gql from 'graphql-tag';
 import { Button, Icon, Label } from 'semantic-ui-react';
 import Tooltip from '../util/Tooltip';
 
+// eslint-disable-next-line react/prop-types
 function LikeButton({ user, post: { id, likeCount, likes } }) {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-
+    // eslint-disable-next-line react/prop-types
     if (user && likes.find((like) => like.username === user.username)) {
       setLiked(true);
     } else {
@@ -17,10 +18,12 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
     }
   }, [user, likes]);
 
+  // eslint-disable-next-line no-use-before-define
   const [likePost] = useMutation(LIKE_POST_MUTATION, {
     variables: { postId: id },
   });
 
+  // eslint-disable-next-line no-nested-ternary
   const likeButton = user ? (
     liked ? (
       <Button color="teal">

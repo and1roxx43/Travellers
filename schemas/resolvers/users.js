@@ -58,6 +58,7 @@ module.exports = { Mutation: {
         }
   
         // Hash the password
+        // eslint-disable-next-line no-param-reassign
         password = await bcrypt.hash(password, 10);
   
         // create the new user with the model and passed in data

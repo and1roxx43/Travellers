@@ -1,3 +1,10 @@
+/* Body {
+    background: url("../images/bak.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+} */
 
 .ui.small.image {
     height:100px;
@@ -8,3 +15,8 @@
     background-position: center center;
     margin-top: 20px;
 }
+/* 
+.footer {
+    position: absolute;
+    bottom: 0;
+} */

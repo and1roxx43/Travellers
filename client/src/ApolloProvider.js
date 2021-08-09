@@ -7,7 +7,7 @@ const httpLink = createHttpLink({
   uri: 'http://localhost:8008',
 });
 
-// a middleware to add authorization headers to API calls
+// kind of a middleware to add authorization headers to API calls
 const authLink = setContext(() => {
   const token = localStorage.getItem('jwtToken');
   return {

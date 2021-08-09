@@ -87,7 +87,7 @@ ___
 - https://github.com/and1roxx43/weCare
 
 ## Heroku
-- No deployment yet!!!!
+- 
 
 ## Contact
 

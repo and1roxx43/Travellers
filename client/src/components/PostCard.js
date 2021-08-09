@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, Icon, Label, Button } from 'semantic-ui-react';
+import { Card, Icon, Label, Image, Button } from 'semantic-ui-react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import LikeButton from "./LikeButton";
 import DeleteButton from './DeleteButton';
 import Tooltip from '../util/Tooltip';
 
-function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) { 
+function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) { // removed likeCount and likes
   const { user } = useContext(AuthContext);
 
   return (
