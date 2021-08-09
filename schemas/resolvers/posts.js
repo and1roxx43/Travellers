@@ -27,11 +27,6 @@ module.exports = { Query: {
         async createPost(_, { body }, context) {
           const user = checkAuth(context);
 
-        //   const { valid, errors } = validateCreatePost(body);
-        //     if (!valid) {
-        //         throw new UserInputError("Errors", { errors });
-        //     }
-    
           if (body.trim() === '') {
             throw new Error('Post body must not be empty');
           }
@@ -46,7 +41,7 @@ module.exports = { Query: {
     
           const post = await newPost.save();
     
-          context.pubsub.publish('NEW_POST', {
+          context.pubsub.publish('PUB_POST', {
             newPost: post,
           });
     
@@ -92,7 +87,7 @@ module.exports = { Query: {
       },
       Subscription: {
         newPost: {
-          subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_POST'),
+          subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('PUB_POST'),
         },
       },
     };

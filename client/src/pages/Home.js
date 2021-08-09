@@ -10,7 +10,7 @@ import { FETCH_POSTS_QUERY } from '../util/graphql';
 import "./Home.css"
 
 function Home() {
-  const { loading, _, data } = useQuery(FETCH_POSTS_QUERY);
+  const { loading, data } = useQuery(FETCH_POSTS_QUERY);
   const { user } = useContext(AuthContext);
 
   return (
