@@ -63,7 +63,6 @@ add the following boiler plate
     DB_PASS=<username:password>
     TOKEN_KEY=<You secret here>
     PORT=<Port>
-}
 ```
 
 Install npm
