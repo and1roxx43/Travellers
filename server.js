@@ -1,9 +1,8 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const { PubSub } = require("apollo-server");
-const mongoose = require("mongoose");
-// const { MONGODB } = require("./config");
-// const { PORT } = require("./config");
+
+const db = require("./config");
 const path = require("path");
 
 const typeDefs = require("./schemas/typeDefs");
@@ -33,19 +32,9 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 })
 
-
-mongoose.connect(process.env.MONGODB || "mongodb+srv://and1roxx43:Mar12Nat10240568@cluster0.j5j1s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { 
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-
-}).then(() => {
-    return app.listen(`${PORT}`)
-}).then((res) => {
-    console.log(`Server running at ${PORT}`);
-    console.log(`GraphQL server lidstening on http://localhost:${PORT}${server.graphqlPath}`);
-})
-.catch(err => {
-    console.log(err)
-})
+db.once("open", () => {
+    app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}!`);
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    })
+});

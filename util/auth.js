@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { AuthenticationError } = require("apollo-server");
-const { TOKEN_KEY } = require("../config");
+require("dotenv").config();
 
 module.exports = (context) => {
 
@@ -11,7 +11,7 @@ module.exports = (context) => {
        const token = authHeader.split("Bearer ")[1]; 
         if(token){
             try{
-            const user = jwt.verify(token, TOKEN_KEY);
+            const user = jwt.verify(token, process.env.TOKEN_KEY);
             return user;
         } catch(err) {
             throw new AuthenticationError("Invalid/Expired token");

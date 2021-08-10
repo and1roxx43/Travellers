@@ -2,7 +2,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { UserInputError } = require('apollo-server');
 const { validateRegisterInput, validateLoginInput } = require('../../util/validators');
-const { TOKEN_KEY } = require('../../config');
+require("dotenv").config();
+
 const User = require('../../models/user');
 
 
@@ -90,7 +91,7 @@ function generateToken(user) {
         email: user.email,
         username: user.username,
       },
-      TOKEN_KEY,
+      process.env.TOKEN_KEY,
       { expiresIn: '1h' }
     );
   }
