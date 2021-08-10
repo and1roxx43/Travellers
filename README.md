@@ -56,7 +56,7 @@ ___
 
 ## Usage
 
-Create a .env 
+Create a .env on root folder
 
 add the following boiler plate
 ```
