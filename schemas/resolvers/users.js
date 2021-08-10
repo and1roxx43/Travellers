@@ -4,6 +4,8 @@ const { UserInputError } = require('apollo-server-express');
 const { validateRegisterInput, validateLoginInput } = require('../../util/validators');
 require("dotenv").config();
 
+const TOKEN_KEY = "Token secret lives here"
+
 const User = require('../../models/user');
 
 
@@ -91,7 +93,7 @@ function generateToken(user) {
         email: user.email,
         username: user.username,
       },
-      process.env.TOKEN_KEY,
+      TOKEN_KEY,
       { expiresIn: '1h' }
     );
   }
