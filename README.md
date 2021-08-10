@@ -55,14 +55,13 @@ ___
 
 ## Usage
 
-Create a config.js 
+Create a .env 
 
 add the following boiler plate
 ```
-module.exports = {
-    MONGODB: "Your connection string here"
-    TOKEN_KEY: "You secret here",
-    PORT:"Your port here"
+    MONGODB="Your connection string here"
+    TOKEN_KEY="You secret here",
+    PORT="Your port here"
 }
 ```
 Install npm
