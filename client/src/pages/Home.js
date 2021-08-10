@@ -14,7 +14,7 @@ function Home() {
   const { user } = useContext(AuthContext);
 
   return (
-    <Grid columns={3}>
+    <Grid columns={4}>
       <Grid.Row className="page-title" style={{width:"100%"}}>
       </Grid.Row>
       <Grid.Row>
