@@ -8,7 +8,7 @@ import LikeButton from "./LikeButton";
 import DeleteButton from './DeleteButton';
 import Tooltip from '../util/Tooltip';
 
-function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) { // removed likeCount and likes
+function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) { 
   const { user } = useContext(AuthContext);
 
   return (

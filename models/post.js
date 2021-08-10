@@ -17,7 +17,7 @@ const postSchema = new Schema({
       createdAt: String,
     },
   ],
-  // MongoDB, doesn't have relations, but the ORM itself lets us have relations between our models
+  
   // this lets us automatically populate these fields later if we want using Mongoose methods
   user: {
     type: Schema.Types.ObjectId,

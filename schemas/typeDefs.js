@@ -1,5 +1,3 @@
-// const { default: gql } = require('graphql-tag');
-
 const { gql } = require('apollo-server-express');
 
 module.exports = gql`

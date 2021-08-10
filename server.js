@@ -12,7 +12,7 @@ const app = express();
 
 const pubsub = new PubSub();
 
-const PORT = process.env.PORT || 8008;
+// const PORT = process.env.PORT || 8008;
 
 const server = new ApolloServer({
     typeDefs,
@@ -33,8 +33,8 @@ if (process.env.NODE_ENV === 'production') {
   });
 
 db.once("open", () => {
-    app.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    app.listen(process.env.PORT, () => {
+        console.log(`API server running on port ${process.env.PORT}!`);
+        console.log(`Use GraphQL at http://localhost:${process.env.PORT}${server.graphqlPath}`);
     })
 });

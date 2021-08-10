@@ -4,8 +4,6 @@ const { UserInputError } = require('apollo-server-express');
 const { validateRegisterInput, validateLoginInput } = require('../../util/validators');
 require("dotenv").config();
 
-const TOKEN_KEY = "Token secret lives here"
-
 const User = require('../../models/user');
 
 
@@ -61,7 +59,6 @@ module.exports = { Mutation: {
         }
   
         // Hash the password
-        // eslint-disable-next-line no-param-reassign
         password = await bcrypt.hash(password, 10);
   
         // create the new user with the model and passed in data
@@ -93,7 +90,7 @@ function generateToken(user) {
         email: user.email,
         username: user.username,
       },
-      TOKEN_KEY,
+      process.env.TOKEN_KEY,
       { expiresIn: '1h' }
     );
   }
