@@ -59,11 +59,12 @@ Create a .env
 
 add the following boiler plate
 ```
-    MONGODB="Your connection string here"
-    TOKEN_KEY="You secret here",
-    PORT="Your port here"
+    DB_PASS=<username:password>
+    TOKEN_KEY=<You secret here>
+    PORT=<Port>
 }
 ```
+
 Install npm
 ```
 npm install on both server and client
