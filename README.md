@@ -35,6 +35,7 @@ ___
 
 ## Tech Used
 - MongoDB
+- Mongoose
 - Express
 - Node js
 - Apollo
