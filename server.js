@@ -12,7 +12,6 @@ const app = express();
 
 const pubsub = new PubSub();
 
-// const PORT = process.env.PORT || 8008;
 
 const server = new ApolloServer({
     typeDefs,
